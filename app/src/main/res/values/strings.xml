@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NewsApp1</string>
+    <string name="emptyList">No News data available.</string>
+    <string name="no_connection">Sorry, no Internet connectivity detected. Please reconnect and try again.</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="listHorizontalPadding">24dp</dimen>
+    <dimen name="horizontalPadding">16dp</dimen>
+    <dimen name="verticalPadding">16dp</dimen>
+    <dimen name="smallPadding">8dp</dimen>
+
+    <dimen name="textSizeName">18sp</dimen>
+    <dimen name="textSizeTitle">16sp</dimen>
+    <dimen name="textSizeDateTime">12sp</dimen>
+</resources>

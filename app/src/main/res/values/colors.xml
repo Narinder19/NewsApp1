@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#344955</color>
+    <color name="colorPrimaryDark">#232F34</color>
+    <color name="colorAccent">#F9AA33</color>
+
+    <!-- Text color for the details of the News in the list item -->
+    <color name="textColorNewsName">#093C6B</color>
+    <!-- Text color for the details of the News in the list item -->
+    <color name="textColorNewsDateTime">#2F4F4F</color>
+    <!-- Text color for the datetime of the news in the list item -->
+    <color name="textColorNewsTitle">#000</color>
+    <!-- Text color for the position of the news -->
+    <color name="newPositionColor">#FF9900</color>
+</resources>
