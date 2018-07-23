@@ -16,7 +16,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildTypes.each{
+        it.buildConfigField 'String', 'THE_GUARDIAN_API_KEY', "\"090f74d7-7815-4ebf-a3cf-04cfa17db7a9\""
+    }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

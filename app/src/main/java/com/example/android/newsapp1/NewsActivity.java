@@ -15,14 +15,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class NewsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
-    // URL for the Technology section news data form  Guardian API
-    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?show-tags=contributor&show-fields=thumbnail&api-key=090f74d7-7815-4ebf-a3cf-04cfa17db7a9";
+    //Get API key
+    String apiKey = BuildConfig.THE_GUARDIAN_API_KEY;
+
+    // URL for the news data form  Guardian API
+    private static final String URL = "https://content.guardianapis.com/search?show-tags=contributor&show-fields=thumbnail&api-key=";
+    String GUARDIAN_URL = URL + apiKey;
     /**
      * Constant value for the News loader ID. We can choose any integer.
      * This really only comes into play if you're using multiple loaders.
