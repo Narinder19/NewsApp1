@@ -2,72 +2,89 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingStart="@dimen/smallPadding"
     android:paddingEnd="@dimen/listHorizontalPadding"
+    android:paddingStart="@dimen/smallPadding"
     android:paddingVertical="@dimen/verticalPadding">
+
     <TextView
         android:id="@+id/position"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_marginRight="@dimen/horizontalPadding"
+        android:layout_marginTop="@dimen/smallPadding"
         android:background="@drawable/position_circle"
         android:fontFamily="sans-serif-medium"
-        android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginTop="@dimen/smallPadding"
         android:textColor="@color/newPositionColor"
         android:textSize="@dimen/textSizeName"
-        android:layout_marginRight="@dimen/horizontalPadding"
+        android:textStyle="bold"
         tools:text="1" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/name"
-            tools:text="Name"
-            android:textSize="@dimen/textSizeName"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/textColorNewsName"
-            android:textStyle="bold"
-            tools:ignore="Suspicious0dp" />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/textColorNewsName"
+            android:textSize="@dimen/textSizeName"
+            android:textStyle="bold"
+            tools:ignore="Suspicious0dp"
+            tools:text="Name" />
+
+        <TextView
             android:id="@+id/title"
-            tools:text="Title"
-            android:textSize="@dimen/textSizeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/textColorNewsTitle"/>
+            android:textColor="@color/textColorNewsTitle"
+            android:textSize="@dimen/textSizeTitle"
+            tools:text="Title" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="@dimen/smallPadding">
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                tools:text="July 16, 2018"
-                android:textSize="@dimen/textSizeDateTime"
-                android:textColor="@color/textColorNewsDateTime"/>
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginLeft="@dimen/smallPadding"
-                tools:text="12:08 PM"
-                android:textSize="@dimen/textSizeDateTime"
-                android:textColor="@color/textColorNewsDateTime"/>
+                android:paddingTop="@dimen/smallPadding">
+
+                <TextView
+                    android:id="@+id/author_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/textColorNewsDateTime"
+                    android:textSize="@dimen/textSizeDateTime"
+                    tools:text="Author,Name" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/time"
+                    android:textColor="@color/textColorNewsDateTime"
+                    android:textSize="@dimen/textSizeDateTime"
+                    tools:text="July 16, 2018" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/smallPadding"
+                    android:textColor="@color/textColorNewsDateTime"
+                    android:textSize="@dimen/textSizeDateTime"
+                    tools:text="12:08 PM" />
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
-
-
-
 </LinearLayout>

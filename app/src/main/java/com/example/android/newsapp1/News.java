@@ -17,6 +17,10 @@ public class News {
      * Url of the News item
      **/
     private String mUrl;
+    /**
+     * Author's First Name of the News item.
+     */
+    private String mAuthor;
 
     /**
      * Construct a new News object.
@@ -26,11 +30,12 @@ public class News {
      * @param PublicationDate is date at which news was published
      * @param Url             is web url for the news item to find more details about the news
      */
-    public News(String Title, String Name, String PublicationDate, String Url) {
+    public News(String Title, String Name, String PublicationDate, String Url,String Author) {
         mTitle = Title;
         mName = Name;
         mPublicationDate = PublicationDate;
         mUrl = Url;
+        mAuthor = Author;
     }
 
     /**
@@ -59,5 +64,13 @@ public class News {
      **/
     public String getUrl() {
         return mUrl;
+    }
+
+    /**
+     *
+     * @return author of the news item.
+     */
+    public String getAuthor() {
+            return (mAuthor);
     }
 }

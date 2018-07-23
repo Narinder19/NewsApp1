@@ -40,6 +40,10 @@ public class NewsAdapter extends ArrayAdapter<News> {
         //Find the TextView with ID title
         TextView titleView = listItemView.findViewById(R.id.title);
         titleView.setText(currentNews.getTitle());
+        //Find the TextView with ID AuthorName
+        TextView authorNameView = listItemView.findViewById(R.id.author_name);
+        String authorText =getContext().getString(R.string.author_prefix) +" "+ currentNews.getAuthor();
+        authorNameView.setText(authorText);
         //Find the TextView with ID name
         TextView nameView = listItemView.findViewById(R.id.name);
         nameView.setText(currentNews.getName());

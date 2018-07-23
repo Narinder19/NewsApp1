@@ -62,8 +62,15 @@ public class QueryUtils {
                 String url = currentNews.getString("webUrl");
                 String publishDate = currentNews.getString("webPublicationDate");
 
+                JSONArray tagsArray = currentNews.getJSONArray("tags");
+                String webTitle="";
+                if(tagsArray.length() > 0) {
+                    JSONObject currentTag = tagsArray.getJSONObject(0);
+                    webTitle = currentTag.getString("webTitle");
+                }
+
                 //Create a new News item add it to News array.
-                News newsItem = new News(title, name, publishDate, url);
+                News newsItem = new News(title, name, publishDate, url, webTitle);
                 news.add(newsItem);
             }
         } catch (JSONException e) {
