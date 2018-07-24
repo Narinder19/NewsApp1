@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.List;
@@ -53,6 +54,8 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         //Check if device is connected to internet.
         if (networkInfo == null || !networkInfo.isConnected()) {
             emptyTextView.setText(R.string.no_connection);
+            recyclerView.setVisibility(View.GONE);
+            emptyTextView.setVisibility(View.VISIBLE);
             return;
         }
 
@@ -87,6 +90,8 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
         } else {
             emptyTextView.setText(R.string.emptyList);
+            recyclerView.setVisibility(View.GONE);
+            emptyTextView.setVisibility(View.VISIBLE);
         }
     }
 
