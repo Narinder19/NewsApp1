@@ -30,7 +30,7 @@ public class News {
      * @param PublicationDate is date at which news was published
      * @param Url             is web url for the news item to find more details about the news
      */
-    public News(String Title, String Name, String PublicationDate, String Url,String Author) {
+    public News(String Title, String Name, String PublicationDate, String Url, String Author) {
         mTitle = Title;
         mName = Name;
         mPublicationDate = PublicationDate;
@@ -67,10 +67,9 @@ public class News {
     }
 
     /**
-     *
      * @return author of the news item.
      */
     public String getAuthor() {
-            return (mAuthor);
+        return (mAuthor);
     }
 }

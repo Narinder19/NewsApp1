@@ -63,8 +63,8 @@ public class QueryUtils {
                 String publishDate = currentNews.getString("webPublicationDate");
 
                 JSONArray tagsArray = currentNews.getJSONArray("tags");
-                String webTitle="";
-                if(tagsArray.length() > 0) {
+                String webTitle = "";
+                if (tagsArray.length() > 0) {
                     JSONObject currentTag = tagsArray.getJSONObject(0);
                     webTitle = currentTag.getString("webTitle");
                 }
