@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
@@ -45,8 +47,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_list_item, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        return new ViewHolder(view);
     }
 
     //This method is called for each ViewHolder to bind it to the adapter. This is where data is passed to
@@ -58,7 +59,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.positionView.setText(String.valueOf(position + 1));
         holder.titleView.setText(currentNews.getTitle());
         holder.nameView.setText(currentNews.getName());
-        holder.authorView.setText(mContext.getString(R.string.author_prefix) + " " + currentNews.getAuthor());
+        holder.authorView.setText(mContext.getString(R.string.author_prefix,currentNews.getAuthor()));
         holder.dateView.setText(getDate(currentNews.getDate()));
         holder.timeView.setText(getTime(currentNews.getDate()));
         holder.parent_layout.setOnClickListener(new View.OnClickListener() {
@@ -84,8 +85,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     private String getTime(String datetime) {
         String formattedTime = null;
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-            sdf.setTimeZone(TimeZone.getDefault());
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
+            //sdf.setTimeZone(TimeZone.getDefault());
             Date date = sdf.parse(datetime);
             formattedTime = new SimpleDateFormat("h:mm a").format(date);
         } catch (ParseException e) {
@@ -98,8 +99,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     private static String getDate(String datetime) {
         String formattedDate = null;
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-            sdf.setTimeZone(TimeZone.getDefault());
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'",Locale.US);
             Date date = sdf.parse(datetime);
             formattedDate = new SimpleDateFormat("MMM dd, yyyy").format(date);
         } catch (ParseException e) {
@@ -110,7 +110,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        LinearLayout parent_layout;
+        //LinearLayout parent_layout;
+       ConstraintLayout parent_layout;
         TextView titleView;
         TextView nameView;
         TextView authorView;

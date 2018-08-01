@@ -8,4 +8,7 @@
     <dimen name="textSizeName">18sp</dimen>
     <dimen name="textSizeTitle">16sp</dimen>
     <dimen name="textSizeDateTime">12sp</dimen>
+
+    <dimen name="positionTextViewHeight">36dp</dimen>
+    <dimen name="positionTextViewWidth">36dp</dimen>
 </resources>

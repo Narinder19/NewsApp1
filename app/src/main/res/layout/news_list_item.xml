@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/smallPadding"
     android:orientation="horizontal"
     android:paddingEnd="@dimen/listHorizontalPadding"
-    android:paddingStart="@dimen/smallPadding"
-    android:paddingVertical="@dimen/verticalPadding">
+    android:paddingStart="@dimen/smallPadding">
 
     <TextView
         android:id="@+id/position"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginRight="@dimen/horizontalPadding"
+        android:layout_width="@dimen/positionTextViewWidth"
+        android:layout_height="@dimen/positionTextViewHeight"
         android:layout_marginTop="@dimen/smallPadding"
         android:background="@drawable/position_circle"
         android:fontFamily="sans-serif-medium"
@@ -21,72 +21,63 @@
         android:textColor="@color/newPositionColor"
         android:textSize="@dimen/textSizeName"
         android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="1" />
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginLeft="@dimen/horizontalPadding"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/textColorNewsName"
+        android:textSize="@dimen/textSizeName"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/position"
+        tools:text="Name" />
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/textColorNewsName"
-            android:textSize="@dimen/textSizeName"
-            android:textStyle="bold"
-            tools:ignore="Suspicious0dp"
-            tools:text="Name" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/horizontalPadding"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/textColorNewsTitle"
+        android:textSize="@dimen/textSizeTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/position"
+        app:layout_constraintStart_toEndOf="@id/position"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="Title" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/textColorNewsTitle"
-            android:textSize="@dimen/textSizeTitle"
-            tools:text="Title" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="@dimen/smallPadding">
+    <TextView
+        android:id="@+id/author_name"
+        style="@style/styleDateTime"
+        android:layout_marginLeft="@dimen/horizontalPadding"
+        android:fontFamily="sans-serif"
+        app:layout_constraintLeft_toRightOf="@id/position"
+        app:layout_constraintTop_toBottomOf="@id/title"
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/smallPadding">
+        tools:text="Author,Name" />
 
-                <TextView
-                    android:id="@+id/author_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:textColor="@color/textColorNewsDateTime"
-                    android:textSize="@dimen/textSizeDateTime"
-                    tools:text="Author,Name" />
+    <TextView
+        android:id="@+id/date"
+        style="@style/styleDateTime"
+        android:layout_toStartOf="@id/time"
+        app:layout_constraintRight_toLeftOf="@+id/time"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="July 16, 2018" />
 
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toStartOf="@id/time"
-                    android:textColor="@color/textColorNewsDateTime"
-                    android:textSize="@dimen/textSizeDateTime"
-                    tools:text="July 16, 2018" />
+    <TextView
+        android:id="@+id/time"
+        style="@style/styleDateTime"
+        android:paddingStart="@dimen/smallPadding"
+        android:paddingEnd="@dimen/smallPadding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="12:08 PM" />
 
-                <TextView
-                    android:id="@+id/time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginLeft="@dimen/smallPadding"
-                    android:textColor="@color/textColorNewsDateTime"
-                    android:textSize="@dimen/textSizeDateTime"
-                    tools:text="12:08 PM" />
-            </RelativeLayout>
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
+

@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="styleDateTime">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/horizontalPadding</item>
+        <item name="android:textColor">@color/textColorNewsDateTime</item>
+        <item name="android:textSize">@dimen/textSizeDateTime</item>
+    </style>
 </resources>
