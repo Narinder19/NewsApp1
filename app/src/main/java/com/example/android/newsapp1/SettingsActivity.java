@@ -22,12 +22,14 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings_main);
+            //Get the Preference object
             Preference section = findPreference(getString(R.string.settings_section_key));
             bindPreferenceSummaryToValue(section);
             Preference edition = findPreference(getString(R.string.settings_edition_key));
             bindPreferenceSummaryToValue(edition);
         }
 
+        // Set Preference change listener and read the current value of the preference stored in SharedPreference on the device
         private void bindPreferenceSummaryToValue(Preference preference) {
             preference.setOnPreferenceChangeListener(this);
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(preference.getContext());

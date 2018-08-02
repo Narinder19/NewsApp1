@@ -7,11 +7,10 @@
 
     <string name="settings_menu_item">Settings</string>
     <string name="settings_title">Settings</string>
-    
+
     <string name="settings_section_label">Select a section</string>
     <string name="settings_section_key" translatable="false">section</string>
     <string name="settings_section_default" translatable="false">politics</string>
-
 
     <string name="settings_section_politics_label">Politics</string>
     <string name="settings_section_politics_value">politics</string>

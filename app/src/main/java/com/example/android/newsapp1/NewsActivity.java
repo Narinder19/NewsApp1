@@ -53,7 +53,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
         //Find empty TextView in the layout
         emptyTextView = findViewById(R.id.empty_list_item);
-        // newsListView.setEmptyView(emptyTextView);
+
         //Get a reference to the ConnectivityManager to check state of network connectivity.
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
